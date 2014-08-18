@@ -12,5 +12,5 @@ Contribution
 ============
 Feel free to submit pull requests for features you would like to see added. 
 
-Copyright (c) 2014 Daniel Kranich
+Copyright (c) 2014 Daniel Kranich  
 Licenced under MIT:https://github.com/KroniK907/BashTemplate/blob/master/LICENSE
