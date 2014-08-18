@@ -1,6 +1,6 @@
-BashFramework
+KroniK's Bash Template
 =============
-This is a Bash Script template which adds several features which are useful for any bash script. 
+In my year or so of heavy bash scripting I have ended up developing a template which includes many of the features I always seem to need. I'll try to keep this up to date as I add or develop parts of this template.  
 
 The features include:
 - Allows options and arguments to be passed to the bash script (read up on getopts to make more use of this)
@@ -12,5 +12,7 @@ Contribution
 ============
 Feel free to submit pull requests for features you would like to see added. 
 
+Licence
+============
 Copyright (c) 2014 Daniel Kranich  
 Licenced under MIT:https://github.com/KroniK907/BashTemplate/blob/master/LICENSE
