@@ -1,6 +1,6 @@
 #!/bin/bash
 #KroniK's Bash Template
-#Version 1.0.2
+#Version 1.0.3
 #https://github.com/KroniK907/KroniKsBashTemplate
 #Copyright (c) 2014 Daniel Kranich
 #Licenced under MIT
@@ -53,7 +53,7 @@ log() {
 		  echo "$Date: $Text" >> "$Log2"
 	fi
 	
-  [ "$VBSE" == true ] && echo "$C"
+  [ "$VBSE" == true ] && echo "$Text"
 }
 
 #   ----------------------------------------------------------------
