@@ -118,7 +118,7 @@ do
     case $opt in
     v) VBSE=true;;
     h) help_text;;
-	x) set -x;;
+    x) set -x;;
     \?) echo "Unknown Option: -$OPTARG" >&2; exit 1;;
     :)  echo "Missing Option Argument for -$OPTARG" >&2; exit 1;;
     *)  echo "Unimplimented Option: -$OPTARG" >&2; exit 1;;
