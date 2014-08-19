@@ -1,7 +1,9 @@
 #!/bin/bash
-#Built Using KroniK's Bash Template
-#Version 1.0.0
+#KroniK's Bash Template
+#Version 1.0.1
 #https://github.com/KroniK907/KroniKsBashTemplate
+#Copyright (c) 2014 Daniel Kranich
+#Licenced under MIT
 #======================================================================#
 #========================         Notes        ========================#
 #======================================================================#
