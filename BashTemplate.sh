@@ -63,8 +63,9 @@ function log {
 #      script will exit.
 #   ----------------------------------------------------------------
 function error_log () {
+    DATE=$(date "+%y-%m-%d %H:%M:%S")
     #Name of last program run
-    PROGNAME=$(basename $0)
+    PROGNAME=${0##*/}
     FATAL="$2"
 
     echo "$DATE ${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
