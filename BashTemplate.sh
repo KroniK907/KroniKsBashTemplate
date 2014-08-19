@@ -1,6 +1,6 @@
 #!/bin/bash
 #KroniK's Bash Template
-#Version 1.0.1
+#Version 1.0.2
 #https://github.com/KroniK907/KroniKsBashTemplate
 #Copyright (c) 2014 Daniel Kranich
 #Licenced under MIT
@@ -42,18 +42,21 @@ VBSE=false
 #         log "ls -la /home/" "/var/log/otherlog.log"
 #   ----------------------------------------------------------------
 log() {
-	DATE=$(date "+%y-%m-%d %H:%M:%S")
-	TEXT="$1"
-	LOG2="$2"
-	if [[ ! -n "$D" ]]
-		then
-		echo "$DATE: $TEXT" >> "$LOG"
-	else
-		echo "$DATE: $TEXT" >> "$LOG"
-		echo "$DATE: $TEXT" >> "$LOG2"
+  #local variables
+  Date Text Log2
+  
+  Date=$(date "+%F %T")
+  Text="$1"
+  Log2="$2"
+  if [[ ! -n "$D" ]]
+    then
+      echo "$Date: $Text" >> "$LOG"
+    else
+      echo "$Date: $Text" >> "$LOG"
+		  echo "$Date: $Text" >> "$Log2"
 	fi
-
-    [ "$VBSE" == true ] && echo "$C"
+	
+  [ "$VBSE" == true ] && echo "$C"
 }
 
 #   ----------------------------------------------------------------
@@ -68,18 +71,21 @@ log() {
 #      script will exit.
 #   ----------------------------------------------------------------
 error_log() {
-    DATE=$(date "+%y-%m-%d %H:%M:%S")
-    #Name of last program run
-    PROGNAME=${0##*/}
-    FATAL="$2"
+  #local variables
+  Date Progname Fatal
+  
+  Date=$(date "+%F %T")
+  #Name of last program run
+  Progname=${0##*/}
+  Fatal="$2"
 
-    echo "$DATE ${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
-    echo "$DATE ${PROGNAME}: ${1:-"Unknown Error"}" >> $ERRLOG
+  echo "$Date ${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
+  echo "$Date ${PROGNAME}: ${1:-"Unknown Error"}" >> $ERRLOG
 
-    if [[ -z "$FATAL" ]]
-    then
-    	exit 1
-    fi
+  if [[ -z "$Fatal" ]]
+  then
+    exit 1
+  fi
 }
 
 #   ----------------------------------------------------------------
@@ -100,7 +106,7 @@ error_log() {
 error_check() {
 	if [[ "$?" != "0" ]]
 	then
-    	error_log "$1" "$2"
+    error_log "$1" "$2"
 	fi
 }
 
@@ -110,8 +116,8 @@ error_check() {
 #   This is called by the -h flag in getopts below
 #   ----------------------------------------------------------------
 help_text() {
-	echo "Help Text Here"
-	exit 1
+  echo "Help Text Here"
+  exit 1
 }
 
 
@@ -143,7 +149,7 @@ error_check "getopts-failed" "FATAL"
 #========================        Script        ========================#
 #======================================================================#
 main() {
-	
+  
 }
 
 main "$@"
@@ -151,5 +157,3 @@ exit
 #======================================================================#
 #========================   Unused Functions   ========================#
 #======================================================================#
-
-
