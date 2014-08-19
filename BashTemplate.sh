@@ -1,5 +1,6 @@
 #!/bin/bash
 #Built Using KroniK's Bash Template
+#Version 1.0.0
 #https://github.com/KroniK907/KroniKsBashTemplate
 #======================================================================#
 #========================         Notes        ========================#
