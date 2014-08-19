@@ -135,13 +135,13 @@ help_text() {
 #   ----------------------------------------------------------------
 while getopts :vhx opt
 do
-    case $opt in
-    v) VBSE=true;;
-    h) help_text;;
-    x) set -x;;
-    :)  echo "Missing Option Argument for -$OPTARG" >&2; exit 1;;
-    *)  echo "Unknown Option: -$OPTARG" >&2; exit 1;;
-    esac
+  case $opt in
+  v) VBSE=true;;
+  h) help_text;;
+  x) set -x;;
+  :)  echo "Missing Option Argument for -$OPTARG" >&2; exit 1;;
+  *)  echo "Unknown Option: -$OPTARG" >&2; exit 1;;
+  esac
 done
 error_check "getopts-failed" "FATAL"
 
