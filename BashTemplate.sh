@@ -31,7 +31,10 @@ VBSE=false
 #   1) This is what you want to log/display to console. Make sure it
 #      is in quotes. 
 #   2) This is an alternate log location if you wish to push the 
-#      above argument to another log.
+#      above argument to a second log.
+#
+#   Example:
+#         log "ls -la /home/" "/var/log/otherlog.log"
 #   ----------------------------------------------------------------
 function log {
 	DATE=$(date "+%y-%m-%d %H:%M:%S")
@@ -84,6 +87,9 @@ function error_log () {
 #      loging the error. This argument can be literally any string
 #      you wish (it only matters if a string exists) however for 
 #      clarity I usually use "FATAL"
+#
+#   Example:
+#         error_check "The previous command failed" "FATAL"
 #   ----------------------------------------------------------------
 function error_check {
 	if [[ "$?" != "0" ]]
@@ -94,6 +100,8 @@ function error_check {
 
 #   ----------------------------------------------------------------
 #                  Function to print the help display
+# 
+#   This is called by the -h flag in getopts below
 #   ----------------------------------------------------------------
 function help_text {
 	echo "Help Text Here"
