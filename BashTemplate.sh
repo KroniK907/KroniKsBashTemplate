@@ -60,7 +60,7 @@ function log {
 #   Accepts 2 arguments:
 #   1) string containing descriptive error message
 #   2) if second argument exists, then the error is fatal and the
-#	    script will exit.
+#      script will exit.
 #   ----------------------------------------------------------------
 function error_log () {
     #Name of last program run
@@ -121,7 +121,7 @@ function help_text {
 #   There is also a good getopts guide here:
 #   http://rsalveti.wordpress.com/2007/04/03/bash-parsing-arguments-with-getopts/
 #   ----------------------------------------------------------------
-while getopts :chvxO opt
+while getopts :vhx opt
 do
     case $opt in
     v) VBSE=true;;
