@@ -128,9 +128,8 @@ do
     v) VBSE=true;;
     h) help_text;;
     x) set -x;;
-    \?) echo "Unknown Option: -$OPTARG" >&2; exit 1;;
     :)  echo "Missing Option Argument for -$OPTARG" >&2; exit 1;;
-    *)  echo "Unimplimented Option: -$OPTARG" >&2; exit 1;;
+    *)  echo "Unknown Option: -$OPTARG" >&2; exit 1;;
     esac
 done
 error_check "getopts-failed" "FATAL"
