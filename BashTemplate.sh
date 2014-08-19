@@ -42,9 +42,6 @@ VBSE=false
 #         log "ls -la /home/" "/var/log/otherlog.log"
 #   ----------------------------------------------------------------
 log() {
-  #local variables
-  Date Text Log2
-  
   Date=$(date "+%F %T")
   Text="$1"
   Log2="$2"
@@ -71,9 +68,6 @@ log() {
 #      script will exit.
 #   ----------------------------------------------------------------
 error_log() {
-  #local variables
-  Date Progname Fatal
-  
   Date=$(date "+%F %T")
   #Name of last program run
   Progname=${0##*/}
