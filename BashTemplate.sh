@@ -36,7 +36,7 @@ VBSE=false
 #   Example:
 #         log "ls -la /home/" "/var/log/otherlog.log"
 #   ----------------------------------------------------------------
-function log {
+log() {
 	DATE=$(date "+%y-%m-%d %H:%M:%S")
 	TEXT="$1"
 	LOG2="$2"
@@ -62,7 +62,7 @@ function log {
 #   2) if second argument exists, then the error is fatal and the
 #      script will exit.
 #   ----------------------------------------------------------------
-function error_log () {
+error_log() {
     DATE=$(date "+%y-%m-%d %H:%M:%S")
     #Name of last program run
     PROGNAME=${0##*/}
@@ -92,7 +92,7 @@ function error_log () {
 #   Example:
 #         error_check "The previous command failed" "FATAL"
 #   ----------------------------------------------------------------
-function error_check {
+error_check() {
 	if [[ "$?" != "0" ]]
 	then
     	error_log "$1" "$2"
@@ -104,7 +104,7 @@ function error_check {
 # 
 #   This is called by the -h flag in getopts below
 #   ----------------------------------------------------------------
-function help_text {
+help_text() {
 	echo "Help Text Here"
 	exit 1
 }
@@ -138,8 +138,11 @@ error_check "getopts-failed" "FATAL"
 #======================================================================#
 #========================        Script        ========================#
 #======================================================================#
+main() {
+	
+}
 
-
+main "$@"
 exit
 #======================================================================#
 #========================   Unused Functions   ========================#
