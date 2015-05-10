@@ -45,7 +45,7 @@ log() {
   Date=$(date "+%F %T")
   Text="$1"
   Log2="$2"
-  if [[ ! -n "$D" ]]
+  if [[ -z "$Log2" ]]
     then
       echo "$Date: $Text" >> "$LOG"
     else
